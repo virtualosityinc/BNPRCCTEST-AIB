@@ -103,7 +103,7 @@
                     "location": "<region>",
                     "runOutputName": "<runOutputName>",
                     "artifactTags": {
-                        "source": "azVmImageBuilder",
+                        "source": "azureVmImageBuilder",
                         "baseosimg": "windows-10"
                     },
                     "replicationRegions": [
