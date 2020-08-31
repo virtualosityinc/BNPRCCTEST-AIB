@@ -25,7 +25,7 @@
         "location": "[parameters('svclocation')]",
         "dependsOn": [],
         "tags": {
-            "imagebuilderTemplate": "AzureImageBuilderSIG",
+            "imagebuilderTemplate": "AzureVMImageBuilderVNET",
             "userIdentity": "enabled"
                 },
             "identity": {
@@ -97,18 +97,14 @@
         ],
         "distribute": 
             [
-                {
-                   "type": "SharedImage",
+                {   "type":"SharedImage",
                     "galleryImageId": "/subscriptions/<subscriptionID>/resourceGroups/<rgName>/providers/Microsoft.Compute/galleries/<sharedImageGalName>/images/<imageDefName>",
+                    "location": "<region>",
                     "runOutputName": "<runOutputName>",
                     "artifactTags": {
-                        "source": "azureVmImageBuilder",
-                        "baseosimg": "windows-10"
-                    },
-                    "replicationRegions": [
-                      "<region1>",
-                      "<region2>"
-                    ]
+                        "source": "azVmImageBuilder",
+                        "baseosimg": "windows10"
+                    }
                 }
             ]
         }
